@@ -12,14 +12,17 @@ export default class PreSplash extends Component {
         Animated.timing(this.state.rotation, {toValue: -1, duration: 150}),
         Animated.timing(this.state.rotation, {toValue: 1, duration: 150}),
         Animated.timing(this.state.rotation, {toValue: 0, duration: 250})
-      ])
-    })
+      ]).start()
+    }, 1000)
+  }
+  componentWillUnMount () {
+    window.clearInterval(this.interval)
   }
   render () {
     return (
       <View style={styles.container}>
         <Image
-          style={styles.image}
+          style={[styles.image, this.getTransform()]}
           source={require('../../images/logo.png')} />
       </View>
     )
