@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
-// import { LoginButton } from 'react-native-fbsdk'
+// import { LoginButton } from 'react-native-fbsdk';
+import { colors } from '~/styles';
 
 Splash.propTypes = {
 
@@ -8,16 +9,21 @@ Splash.propTypes = {
 
 export default function Splash (props) {
   return (
-    <View>
+    <View style={styles.container}>
       <View>
-        <Image source={require('../../images/logo.png')} />
-        <Text>ShivvyTime</Text>
+        <Image style={styles.image} source={require('../../images/logo.png')} />
+        <Text style={styles.slogan}>ShivvyTime</Text>
       </View>
 
-      <View>
+      <View style={styles.loginContainer}>
         {/* <LoginButton
-          onLoginFinished={() => ({})}/> */}
-          <Text>
+          style={{
+            height: 30,
+            width: 180,
+            marginBottom: 15,
+          }}
+          onLoginFinished={props.onLoginFinished}/> */}
+          <Text style={styles.assuranceText}>
             Don't worry, we don't post anything to Facebook.
           </Text>
       </View>
@@ -26,5 +32,12 @@ export default function Splash (props) {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: 50,
+    paddingBottom: 40
+  }
 })
