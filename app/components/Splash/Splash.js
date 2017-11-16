@@ -5,7 +5,7 @@ import { colors, fontSizes } from '~/styles';
 const { height } = Dimensions.get('window');
 
 Splash.propTypes = {
-
+  // onLoginFinished: PropTypes.func.isRequired
 }
 
 export default function Splash (props) {
