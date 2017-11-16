@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { View, StyleSheet, Text, Image, Dimensions } from 'react-native';
 // import { LoginButton } from 'react-native-fbsdk';
-import { colors } from '~/styles';
+import { colors, fontSizes } from '~/styles';
 const { height } = Dimensions.get('window');
 
 Splash.propTypes = {
@@ -51,4 +51,14 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     height: height * .4 > 300 ? 300 : height * .4
   },
+  loginContainer: {
+    paddingLeft: 30,
+    paddingRight: 30,
+    alignItems: 'center'
+  },
+  assuranceText: {
+    color: colors.secondary,
+    fontSize: fontSizes.secondary,
+    textAlign: 'center',
+  }
 })
