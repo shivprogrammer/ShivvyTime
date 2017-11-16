@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import React, { PropTypes } from 'react';
+import { View, StyleSheet, Text, Image } from 'react-native';
+// import { LoginButton } from 'react-native-fbsdk'
 
 Splash.propTypes = {
 
@@ -8,9 +9,18 @@ Splash.propTypes = {
 export default function Splash (props) {
   return (
     <View>
-      <Text>
-        Splash
-      </Text>
+      <View>
+        <Image source={require('../../images/logo.png')} />
+        <Text>ShivvyTime</Text>
+      </View>
+
+      <View>
+        {/* <LoginButton
+          onLoginFinished={() => ({})}/> */}
+          <Text>
+            Don't worry, we don't post anything to Facebook.
+          </Text>
+      </View>
     </View>
   )
 }
