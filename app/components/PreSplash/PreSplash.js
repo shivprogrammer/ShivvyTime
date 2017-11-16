@@ -7,9 +7,9 @@ export default class PreSplash extends Component {
   render () {
     return (
       <View>
-        <Text>
-          PreSplash
-        </Text>
+        <Image
+          style={{}}
+          source={}
       </View>
     )
   }
