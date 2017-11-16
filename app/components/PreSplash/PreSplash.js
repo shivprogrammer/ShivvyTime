@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import { View, StyleSheet, Image, Animated } from 'react-native';
+import { View, StyleSheet, Animated } from 'react-native';
 
 export default class PreSplash extends Component {
   static propTypes = {}
@@ -18,10 +18,22 @@ export default class PreSplash extends Component {
   componentWillUnMount () {
     window.clearInterval(this.interval)
   }
+  getTransform () {
+    return {
+      transform: [
+        {
+          rotate: this.state.rotation.interpolate({
+            inputRange: [-1, 1],
+            outputRange: ['-20deg', '20deg']
+          })
+        }
+      ]
+    }
+  }
   render () {
     return (
       <View style={styles.container}>
-        <Image
+        <Animated.Image
           style={[styles.image, this.getTransform()]}
           source={require('../../images/logo.png')} />
       </View>
