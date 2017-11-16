@@ -9,7 +9,7 @@ export default class PreSplash extends Component {
       <View>
         <Image
           style={{}}
-          source={}
+          source={require('../../images/logo.png')} />
       </View>
     )
   }
