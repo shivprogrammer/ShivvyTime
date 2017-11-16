@@ -39,5 +39,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 50,
     paddingBottom: 40
+  },
+  slogan: {
+    color: colors.blue,
+    fontSize: 40,
+    margin: 20,
+    textAlign: 'center'
   }
 })
