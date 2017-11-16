@@ -1,12 +1,12 @@
 const initialState = {
   isAuthed: false,
   isAuthenticating: false,
-  autheId: ''
+  authedId: '',
 }
 
-export default function authentication (state = intitialState, action) {
+export default function authentication (state = initialState, action) {
   switch (action.type) {
     default :
-    return state
+      return state
   }
 }
