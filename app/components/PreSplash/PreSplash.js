@@ -3,7 +3,18 @@ import { View, StyleSheet, Image, Animated } from 'react-native';
 
 export default class PreSplash extends Component {
   static propTypes = {}
-  state = {}
+  state = {
+    rotation: new Animated.Value(0)
+  }
+  componentDidMount () {
+    this.interval = setInterval(() => {
+      Animated.sequence([
+        Animated.timing(this.state.rotation, {toValue: -1, duration: 150}),
+        Animated.timing(this.state.rotation, {toValue: 1, duration: 150}),
+        Animated.timing(this.state.rotation, {toValue: 0, duration: 250})
+      ])
+    })
+  }
   render () {
     return (
       <View style={styles.container}>
