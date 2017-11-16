@@ -6,7 +6,7 @@ export default class PreSplash extends Component {
   state = {}
   render () {
     return (
-      <View>
+      <View style={styles.container}>
         <Image
           style={{}}
           source={require('../../images/logo.png')} />
@@ -14,3 +14,12 @@ export default class PreSplash extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+})
