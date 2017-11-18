@@ -20,6 +20,14 @@ export default function FooterTabs (props) {
         onPress={() => props.onTabSelect('home')}>
           <Text>HOME!</Text>
       </Icon.TabBarItem>
+      <Icon.TabBarItem
+        iconSize={35}
+        iconName='ios-trophy-outline'
+        title='Leaderboard'
+        selected={props.activeFooterTab === 'leaderboard'}
+        onPress={() => props.onTabSelect('leaderboard')}>
+          <Text>LEADERBOARD!</Text>
+      </Icon.TabBarItem>
     </TabBarIOS>
   )
 }
