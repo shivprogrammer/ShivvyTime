@@ -7,14 +7,8 @@ FooterTabs.propTypes = {
 
 export default function FooterTabs (props) {
   return (
-    <View>
-      <Text>
-        FooterTabs
-      </Text>
-    </View>
+    <Text>
+      FooterTabs
+    </Text>
   )
 }
-
-const styles = StyleSheet.create({
-
-})
