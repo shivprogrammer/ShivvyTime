@@ -1,24 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-import { View, Text } from 'react-native';
 import { FooterTabs } from '~/components';
 import { connect } from 'react-redux';
 import { setFooterTab } from '~/redux/modules/activeFooterTab';
-
-class FooterTabsContainer extends Component {
-  static PropTypes = {
-    activeFooterTab: PropTypes.string.isRequired,
-    dispatch: PropTypes.func.isRequired,
-    navigator: PropTypes.object.isRequired
-  }
-  state = {}
-  render() {
-    return (
-      <FooterTabs
-        activeFooterTab={this.props.activeFooterTab}
-        onTabSelect={(tab) => this.props.dispatch(activeFooterTab(tab))}/>
-    )
-  }
-}
 
 function mapStateToProps ({activeFooterTab}) {
   return {
@@ -26,8 +8,15 @@ function mapStateToProps ({activeFooterTab}) {
   }
 }
 
+function mapDispatchToProps (dispatch) {
+  return {
+    onTabSelect: (tab) => dispatch(setFooterTab(tab))
+  }
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(
-  FooterTabsContainer
+  FooterTabs
 )
