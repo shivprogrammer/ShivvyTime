@@ -2,9 +2,10 @@ import { FooterTabs } from '~/components';
 import { connect } from 'react-redux';
 import { setFooterTab } from '~/redux/modules/activeFooterTab';
 
-function mapStateToProps ({activeFooterTab}) {
+function mapStateToProps ({activeFooterTab}, {navigator}) {
   return {
-    activeFooterTab
+    activeFooterTab,
+    navigator
   }
 }
 
@@ -17,6 +18,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(
-  FooterTabs
-)
+)(FooterTabs)

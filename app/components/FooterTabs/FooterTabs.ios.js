@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { TabBarIOS, Text } from 'react-native';
 
 FooterTabs.propTypes = {
 
@@ -14,3 +14,7 @@ export default function FooterTabs (props) {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+
+})

@@ -1,9 +1,10 @@
-import React, { PropTypes, Component } from 'react'
-import { View } from 'react-native'
-import { ShivvyTimeNavigator } from '~/containers'
-import { PreSplash } from '~/components'
+import React, { PropTypes, Component } from 'react';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { ShivvyTimeNavigator } from '~/containers';
+import { PreSplash } from '~/components';
 
-export default class AppContainer extends Component {
+class AppContainer extends Component {
   static propTypes = {
     // isAuthenticating: PropTypes.bool.isRequired,
   }
@@ -20,3 +21,13 @@ export default class AppContainer extends Component {
     )
   }
 }
+
+function mapStateToProps ({authentication}) {
+  return {
+    isAuthenticating: authentication.isAuthenticating
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(AppContainer)
