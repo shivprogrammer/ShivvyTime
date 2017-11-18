@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { TabBarIOS, Text } from 'react-native';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { HomeContainer, LeaderboardContainer } from '~/containers';
 
 FooterTabs.propTypes = {
   activeFooterTab: PropTypes.string.isRequired,
@@ -18,7 +19,7 @@ export default function FooterTabs (props) {
         title='Home'
         selected={props.activeFooterTab === 'home'}
         onPress={() => props.onTabSelect('home')}>
-          <Text>HOME!</Text>
+          <HomeContainer navigator={navigator}/>
       </Icon.TabBarItem>
       <Icon.TabBarItem
         iconSize={35}
@@ -26,7 +27,7 @@ export default function FooterTabs (props) {
         title='Leaderboard'
         selected={props.activeFooterTab === 'leaderboard'}
         onPress={() => props.onTabSelect('leaderboard')}>
-          <Text>LEADERBOARD!</Text>
+          <LeaderboardContainer navigator={navigator}/>
       </Icon.TabBarItem>
     </TabBarIOS>
   )
