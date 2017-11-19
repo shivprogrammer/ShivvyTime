@@ -6,7 +6,7 @@ import { PreSplash } from '~/components';
 
 class AppContainer extends Component {
   static propTypes = {
-    // isAuthenticating: PropTypes.bool.isRequired,
+    isAuthenticating: PropTypes.bool.isRequired,
   }
   // static defaultProps = {
   //   isAuthenticating: true
@@ -16,7 +16,7 @@ class AppContainer extends Component {
       <View style={{flex: 1}}>
         {this.props.isAuthenticating === true
             ? <PreSplash />
-            : <ShivvyTimeNavigator />}
+            : <ShivvyTimeNavigator isAuthed={this.props.isAuthed} />}
       </View>
     )
   }
@@ -24,7 +24,8 @@ class AppContainer extends Component {
 
 function mapStateToProps ({authentication}) {
   return {
-    isAuthenticating: authentication.isAuthenticating
+    isAuthenticating: authentication.isAuthenticating,
+    isAuthed: authentication.isAuthed
   }
 }
 
